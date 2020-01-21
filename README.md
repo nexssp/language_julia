@@ -1,6 +1,6 @@
 # Julia implementation for Nexss Programmer 2.0
 
-WIP: Julia developers please add your content here.
+To Install Nexss Programmer please go to [Nexss Programmer CLI](https://github.com/nexssp/cli#readme) for more information.
 
 ## Useful Links
 
