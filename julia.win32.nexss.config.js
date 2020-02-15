@@ -3,6 +3,19 @@ languageConfig.title = "Julia";
 languageConfig.description =
   "Julia was designed from the beginning for high performance. Julia programs compile to efficient native code for multiple platforms via LLVM.";
 languageConfig.url = "https://julialang.org/";
+languageConfig.founders = [
+  "Jeff Bezanson",
+  "Alan Edelman",
+  "Stefan Karpinski",
+  "Viral B. Shah"
+];
+languageConfig.developers = [
+  "Jeff Bezanson",
+  "Stefan Karpinski",
+  "Viral B. Shah",
+  "Other contributors"
+];
+languageConfig.years = ["2012"];
 languageConfig.extensions = [".jl"];
 languageConfig.builders = {};
 languageConfig.compilers = {
@@ -18,18 +31,18 @@ languageConfig.errors = require("./nexss.julia.errors");
 languageConfig.languagePackageManagers = {
   juliapm: {
     // TODO:
-    installation: "PowerShell.exe -File juliaPackageManager.ps1",
+    installation: "julia -e 'using jlpkg;import jlpkg; jlpkg.install()'",
     messageAfterInstallation: "",
     installed: "",
-    search: "juliapm search",
-    install: "juliapm require",
-    uninstall: "juliapm remove <args>",
-    help: "juliapm",
-    version: "juliapm version",
+    search: "jlpkg  search",
+    install: "jlpkg install",
+    uninstall: "jlpkg remove",
+    help: "jlpkg",
+    version: "jlpkg  version",
     init: () => {},
     // if command not found in specification
     // run directly on package manager
-    else: "juliapm"
+    else: "jlpkg"
   }
 };
 
