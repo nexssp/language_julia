@@ -7,13 +7,13 @@ languageConfig.founders = [
   "Jeff Bezanson",
   "Alan Edelman",
   "Stefan Karpinski",
-  "Viral B. Shah"
+  "Viral B. Shah",
 ];
 languageConfig.developers = [
   "Jeff Bezanson",
   "Stefan Karpinski",
   "Viral B. Shah",
-  "Other contributors"
+  "Other contributors",
 ];
 languageConfig.years = ["2012"];
 languageConfig.extensions = [".jl"];
@@ -21,11 +21,10 @@ languageConfig.builders = {};
 languageConfig.compilers = {
   julia: {
     install: "scoop install julia",
-    // Cpp does not have possibility to compile and run on the fly. We need to save it as a exe file first.
     command: "julia",
     args: "<file>",
-    help: ``
-  }
+    help: ``,
+  },
 };
 languageConfig.errors = require("./nexss.julia.errors");
 languageConfig.languagePackageManagers = {
@@ -38,12 +37,12 @@ languageConfig.languagePackageManagers = {
     install: "jlpkg install",
     uninstall: "jlpkg remove",
     help: "jlpkg",
-    version: "jlpkg  version",
+    version: "julia --version",
     init: () => {},
     // if command not found in specification
     // run directly on package manager
-    else: "jlpkg"
-  }
+    else: "jlpkg",
+  },
 };
 
 module.exports = languageConfig;
