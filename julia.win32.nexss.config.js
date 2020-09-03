@@ -1,4 +1,8 @@
-let languageConfig = Object.assign({}, require("../config.win32"));
+let languageConfig = Object.assign(
+  {},
+  require(`../config.${process.platform}`)
+);
+
 languageConfig.title = "Julia";
 languageConfig.description =
   "Julia was designed from the beginning for high performance. Julia programs compile to efficient native code for multiple platforms via LLVM.";
