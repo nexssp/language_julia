@@ -1,6 +1,6 @@
 git clone -b master --depth=1 git://github.com/JuliaLang/julia.git ~/.nexssApps/Julia/
 
-cd ~/.nexssApps/Julia/julia
+cd ~/.nexssApps/Julia
 apt update
 apt install gcc g++ gfortran make
 
