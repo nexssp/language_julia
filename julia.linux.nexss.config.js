@@ -7,10 +7,10 @@ let sudo = os.sudo();
 languageConfig.compilers = {
   julia: {
     install: ` if [ ! -f ${process.env.NEXSS_APPS_PATH}/julia-1.5.1-linux-x86_64.tar.gz ];then wget https://julialang-s3.julialang.org/bin/linux/x64/1.5/julia-1.5.1-linux-x86_64.tar.gz -P ${process.env.NEXSS_APPS_PATH}/; fi
-if [ ! -d " " ]; then mkdir ${process.env.NEXSS_APPS_PATH}/julia ; fi
-tar -xzf julia-1.5.1-linux-x86_64.tar.gz --strip-components 1 -C ${process.env.NEXSS_APPS_PATH}/julia
+if [ ! -d "${process.env.NEXSS_APPS_PATH}/julia" ]; then mkdir ${process.env.NEXSS_APPS_PATH}/julia ; fi
+tar -xzf ${process.env.NEXSS_APPS_PATH}/julia-1.5.1-linux-x86_64.tar.gz --strip-components 1 -C ${process.env.NEXSS_APPS_PATH}/julia
 cd ${process.env.NEXSS_APPS_PATH}/julia
-${sudo}ln -sf ${process.env.NEXSS_APPS_PATH}/julia/bin/julia /usr/bin/julia`,
+${sudo}ln -s ${process.env.NEXSS_APPS_PATH}/julia/bin/julia /usr/bin/julia`,
     command: "julia",
     args: "<file>",
     help: ``,
