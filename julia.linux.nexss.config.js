@@ -39,7 +39,7 @@ switch (distName) {
     break;
   case os.distros.UBUNTU:
     languageConfig.compilers.julia.install = os.replacePMByDistro(
-      `${sudo}snap install julia --classic`
+      `${sudo}apt-get update && ${sudo}apt-get install julia -y`
     );
     break;
   default:
